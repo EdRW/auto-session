@@ -20,10 +20,6 @@ M.setup_autocmds = function(config, AutoSession)
 
       AutoSession.AutoSaveSession()
 
-      -- Clear all buffers and jumps after session save so session doesn't blead over to next session.
-      vim.cmd "%bd!"
-      vim.cmd "clearjumps"
-
       if type(conf.pre_cwd_changed_hook) == "function" then
         conf.pre_cwd_changed_hook()
       end
